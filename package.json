@@ -6,7 +6,7 @@
   "type": "module",
   "jest": {
   	"testMatch": ["**/?(*.)+(spec).js"]
-  }
+  },
   "scripts": {
     "lint:js": "eslint ./index.js ./utils/**/*.js",
     "lint:js:fix": "npm run lint:js -- --fix",
