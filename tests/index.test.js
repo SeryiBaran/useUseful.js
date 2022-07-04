@@ -66,6 +66,6 @@ test("Test UTime.sleep()", async () => {
   const beforeTime = new Date().getMilliseconds();
   const n = await Index.UTime.sleep(ms);
   const newTime = new Date().getMilliseconds();
-  expect(newTime).toBeGreaterThanOrEqual(beforeTime + 100);
-  expect(newTime).toBeLessThan(beforeTime + 110);
+  expect(newTime).toBeGreaterThanOrEqual(beforeTime + ms);
+  expect(newTime).toBeLessThan(beforeTime + ms + 10);
 });
