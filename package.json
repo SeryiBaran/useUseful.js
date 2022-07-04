@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint:js": "eslint ./index.js ./utils/. --ext .js",
+    "lint:js": "eslint ./index.js ./utils/**/*.js",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --bail --findRelatedTests",
     "prepare": "husky install"
   },
   "keywords": [],

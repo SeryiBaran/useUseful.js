@@ -6,16 +6,16 @@ export const URandom = {
   bool: () => Math.random() < 0.5,
   choose: arr => arr[Math.floor(Math.random() * arr.length)],
   arrOfNumbers(len, min, max) {
-    const result = [];
+    const res = [];
     for (let i = 0; i < len; i++) {
       const temp = this.int(min, max);
-      if (result.indexOf(temp) === -1) {
-        result.push(temp);
+      if (res.indexOf(temp) === -1) {
+        res.push(temp);
       } else {
         i--;
       }
     }
-    return result;
+    return res;
   },
 };
 

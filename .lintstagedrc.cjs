@@ -1,3 +1,4 @@
 module.exports = {
-  "**/*.js": ["npm run lint:js", "npm run test"],
+  "./index.js": ["npm run lint:js", "npm run test"],
+  "./utils/**/*.js": ["npm run lint:js", "npm run test"],
 };
