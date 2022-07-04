@@ -63,9 +63,9 @@ test("Test UMath.pi()", () => {
 
 test("Test UTime.sleep()", async () => {
   const ms = 100;
-  const beforeTime = new Date().getMilliseconds();
+  const beforeTime = new Date().getTime();
   const n = await Index.UTime.sleep(ms);
-  const newTime = new Date().getMilliseconds();
+  const newTime = new Date().getTime();
   expect(newTime).toBeGreaterThanOrEqual(beforeTime + ms);
   expect(newTime).toBeLessThan(beforeTime + ms + 10);
 });
