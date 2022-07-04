@@ -20,9 +20,9 @@ export const URandom = {
 };
 
 export const UMath = {
-  pi: (len) => {
+  pi: len => {
     if (len > PISTR.length || len <= 0) {
-      throw 'UUJS: Error: Invalid argument "length" of method UMath.pi!';
+      throw new Error()'UUJS: Error: Invalid argument "length" of method UMath.pi!');
       return;
     }
     return `3.${PISTR.slice(0, len)}`;
