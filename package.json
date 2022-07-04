@@ -4,11 +4,17 @@
   "description": "ESM module with useful JavaScript functions",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/SeryiBaran/useUseful.js.git"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2"
   }
 }
