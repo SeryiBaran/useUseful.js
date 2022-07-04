@@ -1,4 +1,4 @@
-import * as Index from "../index.js";
+import * as Index from "../src/index.js";
 
 expect.extend({
   toBeInRange(received, a, b) {

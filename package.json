@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "lint:js": "eslint ./src/. --ext .js",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
   "keywords": [],
@@ -15,6 +17,12 @@
     "url": "https://github.com/SeryiBaran/useUseful.js.git"
   },
   "devDependencies": {
-    "jest": "^28.1.2"
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }
