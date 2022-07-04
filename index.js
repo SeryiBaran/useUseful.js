@@ -4,7 +4,7 @@ export const URandom = {
   int: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
   float: (min, max) => Math.random() * (max - min + 1) + min,
   bool: () => Math.random() < 0.5,
-  arrElem: (arr) => arr[Math.floor(Math.random() * numPool.length)],
+  choose: arr => arr[Math.floor(Math.random() * arr.length)],
   arrOfNumbers(len, min, max) {
     let result = [];
     for (let i = 0; i < len; i++) {
@@ -27,4 +27,8 @@ export const UMath = {
     }
     return `3.${PISTR.slice(0, len)}`;
   },
+};
+
+export const UTime = {
+  sleep: ms => new Promise(r => setTimeout(r, ms)),
 };
