@@ -5,18 +5,6 @@ export const URandom = {
   float: (min, max) => Math.random() * (max - min) + min,
   bool: () => Math.random() < 0.5,
   choose: arr => arr[Math.floor(Math.random() * arr.length)],
-  arrOfNumbers(len, min, max) {
-    const res = [];
-    for (let i = 0; i < len; i++) {
-      const temp = this.int(min, max);
-      if (res.indexOf(temp) === -1) {
-        res.push(temp);
-      } else {
-        i--;
-      }
-    }
-    return res;
-  },
 };
 
 export const UMath = {
@@ -33,4 +21,26 @@ export const UMath = {
 
 export const UTime = {
   sleep: ms => new Promise(r => setTimeout(r, ms)),
+};
+
+export const UArray = {
+  count: {
+    odd: arr => arr.filter(elem => elem % 2 === 0).length,
+    even: arr => arr.filter(elem => elem % 2 === 1).length,
+    positive: arr => arr.filter(elem => elem > 0).length,
+    negative: arr => arr.filter(elem => elem < 0).length,
+  },
+  includes: {
+    odd: arr => UArray.count.odd(arr) > 0,
+    even: arr => UArray.count.even(arr) > 0,
+    positive: arr => UArray.count.positive(arr) > 0,
+    negative: arr => UArray.count.negative(arr) > 0,
+  },
+};
+
+export const UConvert = {
+  rgbToHex: (r, g, b) =>
+    '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1),
+  celsiusToFahrenheit: c => (c * 9) / 5 + 32,
+  fahrenheitToCelsius: f => ((f - 32) * 5) / 9,
 };
