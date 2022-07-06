@@ -17,9 +17,12 @@ yarn add @seryibaran/useuseful
 
 ## List of functions
 Template:
+
 - `UXxx` - description of module
-  - `xxx` - description of function
-    - `xxx` - description of argument
+  - `xxx` - description of module.module
+    - ...
+      - `xxx` - description of function
+        - `xxx` - description of argument
 
 ---
 
@@ -31,7 +34,7 @@ Template:
     - `min` - minimum
     - `max` - maximum
   - `bool` - generates random bool (`true`/`false`)
-  - `choose` - generates random element from array.
+  - `choose` - returns random element from array.
     - `array` - array for choose
   - `arrOfNumbers` - generates array, filled with random numbers in range.
     - `len` - length of generated array
@@ -43,6 +46,36 @@ Template:
 - `UTime` - time functions
   - `sleep` - returns a promise that will be resolved after the specified time in milliseconds.
     - `time` - time of sleep in milliseconds
+- `UArray` - array functions
+  - `count` - functions for counting
+    - `numbers` functions for counting numbers
+        - `odd` - returns the number of odd numbers 
+          - `array` - array for counting
+        - `even` - returns the number of even numbers
+          - `array` - array for counting
+        - `positive` - returns the number of positive numbers
+          - `array` - array for counting
+        - `negative` - returns the number of negative numbers
+          - `array` - array for counting
+  - `includes` - functions for counting
+    - `numbers` functions for counting numbers
+        - `odd` - tests an array for includes of odd numbers
+          - `array` - array for test
+        - `even` - tests an array for includes of even numbers
+          - `array` - array for test
+        - `positive` - tests an array for includes of positive numbers
+          - `array` - array for test
+        - `negative` - tests an array for includes of negative numbers
+          - `array` - array for test
+- `UConvert` - functions for convert
+  - `rgbToHex` - convert RGB to HEX
+    - `r` - red
+    - `g` - green
+    - `b` - blue
+  - `celsiusToFahrenheit` - convert celsius to fahrenheit
+    - `celsius` - temperature in celsius
+  - `fahrenheitToCelsius` - convert fahrenheit to celsius
+    - `fahrenheit` - temperature in fahrenheit
 
 ## Example of using
 
