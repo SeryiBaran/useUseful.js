@@ -15,7 +15,21 @@ expect.extend({
 });
 
 const testArray = [-1, 0, -514, 1, 2, 3, 4, 5];
-const testArray2 = [5454, -9, -5664, 'fh', '', [], [[]], { '': '' }];
+const testArray2 = [
+  5454,
+  -9,
+  -5664,
+  1,
+  2,
+  3,
+  4,
+  5,
+  'fh',
+  '',
+  [],
+  [[]],
+  { '': '' },
+];
 
 describe('URandom', () => {
   test('Test URandom.int()', () => {
@@ -63,44 +77,64 @@ describe('UTime', () => {
 });
 
 describe('UArray', () => {
-  test('Test UArray.count.odd()', () => {
-    const f = Index.UArray.count.odd;
+  test('Test UArray.count.numbers.odd()', () => {
+    const f = Index.UArray.count.numbers.odd;
     expect(f(testArray)).toBe(4);
+    expect(f(testArray2)).toBe(4);
   });
 
-  test('Test UArray.count.even()', () => {
-    const f = Index.UArray.count.even;
+  test('Test UArray.count.numbers.even()', () => {
+    const f = Index.UArray.count.numbers.even;
     expect(f(testArray)).toBe(3);
+    expect(f(testArray2)).toBe(3);
   });
 
-  test('Test UArray.count.positive()', () => {
-    const f = Index.UArray.count.positive;
+  test('Test UArray.count.numbers.positive()', () => {
+    const f = Index.UArray.count.numbers.positive;
     expect(f(testArray)).toBe(5);
+    expect(f(testArray2)).toBe(6);
   });
 
-  test('Test UArray.count.negative()', () => {
-    const f = Index.UArray.count.negative;
+  test('Test UArray.count.numbers.negative()', () => {
+    const f = Index.UArray.count.numbers.negative;
     expect(f(testArray)).toBe(2);
+    expect(f(testArray2)).toBe(2);
   });
 
-  test('Test UArray.includes.odd()', () => {
-    const f = Index.UArray.includes.odd;
+  test('Test UArray.includes.numbers.odd()', () => {
+    const f = Index.UArray.includes.numbers.odd;
     expect(f(testArray)).toBeTruthy();
+    expect(f(testArray2)).toBeTruthy();
   });
 
-  test('Test UArray.includes.even()', () => {
-    const f = Index.UArray.includes.even;
+  test('Test UArray.includes.numbers.even()', () => {
+    const f = Index.UArray.includes.numbers.even;
     expect(f(testArray)).toBeTruthy();
+    expect(f(testArray2)).toBeTruthy();
   });
 
-  test('Test UArray.includes.positive()', () => {
-    const f = Index.UArray.includes.positive;
+  test('Test UArray.includes.numbers.positive()', () => {
+    const f = Index.UArray.includes.numbers.positive;
     expect(f(testArray)).toBeTruthy();
+    expect(f(testArray2)).toBeTruthy();
   });
 
-  test('Test UArray.includes.negative()', () => {
-    const f = Index.UArray.includes.negative;
+  test('Test UArray.includes.numbers.negative()', () => {
+    const f = Index.UArray.includes.numbers.negative;
     expect(f(testArray)).toBeTruthy();
+    expect(f(testArray2)).toBeTruthy();
+  });
+  test('Test UArray.chunked()', () => {
+    const f = Index.UArray.chunked;
+    expect(f(testArray, 5)).toStrictEqual([
+      [-1, 0, -514, 1, 2],
+      [3, 4, 5],
+    ]);
+    expect(f(testArray2, 5)).toStrictEqual([
+      [5454, -9, -5664, 1, 2],
+      [3, 4, 5, 'fh', ''],
+      [[], [[]], { '': '' }],
+    ]);
   });
 });
 describe('UConvert', () => {

@@ -25,16 +25,31 @@ export const UTime = {
 
 export const UArray = {
   count: {
-    odd: arr => arr.filter(elem => elem % 2 === 0).length,
-    even: arr => arr.filter(elem => elem % 2 === 1).length,
-    positive: arr => arr.filter(elem => elem > 0).length,
-    negative: arr => arr.filter(elem => elem < 0).length,
+    numbers: {
+      odd: arr =>
+        arr.filter(elem => typeof elem === 'number' && elem % 2 === 0).length,
+      even: arr =>
+        arr.filter(elem => typeof elem === 'number' && elem % 2 === 1).length,
+      positive: arr =>
+        arr.filter(elem => typeof elem === 'number' && elem > 0).length,
+      negative: arr =>
+        arr.filter(elem => typeof elem === 'number' && elem < 0).length,
+    },
   },
   includes: {
-    odd: arr => UArray.count.odd(arr) > 0,
-    even: arr => UArray.count.even(arr) > 0,
-    positive: arr => UArray.count.positive(arr) > 0,
-    negative: arr => UArray.count.negative(arr) > 0,
+    numbers: {
+      odd: arr => UArray.count.numbers.odd(arr) > 0,
+      even: arr => UArray.count.numbers.even(arr) > 0,
+      positive: arr => UArray.count.numbers.positive(arr) > 0,
+      negative: arr => UArray.count.numbers.negative(arr) > 0,
+    },
+  },
+  chunked: (arr, size) => {
+    const temp = [];
+    for (let i = 0; i < arr.length; i += size) {
+      temp.push(arr.slice(i, i + size));
+    }
+    return temp;
   },
 };
 
