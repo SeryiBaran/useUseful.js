@@ -1,6 +1,6 @@
 {
   "name": "@seryibaran/useuseful",
-  "version": "1.0.2-alpha.6",
+  "version": "1.0.2-alpha.7",
   "description": "ESM module with useful JavaScript functions",
   "main": "index.js",
   "type": "module",
